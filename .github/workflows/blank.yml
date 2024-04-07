@@ -24,5 +24,5 @@ jobs:
       - name: Login to Azure
         run: az login --service-principal -u ${{ secrets.AZURE_APP_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
 
-      - name: Check Azure Login Status
-        run: az account show
+      - name: List Azure Subscriptions
+        run: az account list
