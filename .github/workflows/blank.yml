@@ -32,4 +32,7 @@ jobs:
          $resourceGroupName = "testgit"
          $namespaceName = "PradeepNamespaceName"
          $location = "South India"
+         Install-Module -Name Az.ServiceBus -Force -AllowClobber -Scope CurrentUser -Repository PSGallery
+         Import-Module -Name Az.ServiceBus -Force -Global
+
          New-AzServiceBusNamespace -ResourceGroupName $resourceGroupName -NamespaceName $namespaceName -Location $location
