@@ -14,4 +14,4 @@ jobs:
         run: az login --service-principal -u ${{ secrets.AZURE_APP_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
 
       - name: Create Azure Service Bus Namespace
-        run: az servicebus namespace create --name "Test1818" --resource-group "testgit" --location "westus"
+        run: az servicebus namespace create --name "SimplySouth" --resource-group "testgit" --location "southindia"
