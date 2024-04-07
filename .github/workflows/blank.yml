@@ -1,0 +1,22 @@
+name: Create Azure Service Bus Namespace
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_service_bus:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Azure CLI
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 3.0.0
+
+      - name: Login to Azure
+        run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
+      - name: Create Azure Service Bus Namespace
+        run: az servicebus namespace create --resource-group 'South India' --name 'TestNamespace'
