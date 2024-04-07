@@ -1,10 +1,10 @@
-name: Create Azure Service Bus Namespace
+name: Check Azure Login
 
 on:
   workflow_dispatch:
 
 jobs:
-  create_service_bus:
+  check_login:
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -18,5 +18,5 @@ jobs:
       - name: Login to Azure
         run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
 
-      - name: Create Azure Service Bus Namespace
-        run: az servicebus namespace create --resource-group 'testgit' --name 'TestNamespace'
+      - name: Check Azure Login Status
+        run: az account show
