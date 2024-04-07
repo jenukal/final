@@ -1,7 +1,7 @@
 name: Create Azure Service Bus Namespace without CLI install
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   create_service_bus:
