@@ -28,4 +28,4 @@ jobs:
         run: az account list
       - name: Create Azure Service Bus Namespace
         shell: cmd
-        run: az servicebus namespace create --name 'Test18' --resource-group 'testgit' --location 'South India'
+        run: az servicebus namespace create --name 'Test18' --resource-group 'testgit' --location 'SouthIndia'
