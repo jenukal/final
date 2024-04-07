@@ -26,3 +26,10 @@ jobs:
 
       - name: List Azure Subscriptions
         run: az account list
+      - name: Create Azure Service Bus Namespace
+        shell: pwsh
+        run: |
+         $resourceGroupName = "testgit"
+         $namespaceName = "PradeepNamespaceName"
+         $location = "South India"
+         New-AzServiceBusNamespace -ResourceGroupName $resourceGroupName -NamespaceName $namespaceName -Location $location
