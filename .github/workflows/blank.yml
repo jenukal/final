@@ -27,12 +27,5 @@ jobs:
       - name: List Azure Subscriptions
         run: az account list
       - name: Create Azure Service Bus Namespace
-        shell: pwsh
-        run: |
-         $resourceGroupName = "testgit"
-         $namespaceName = "PradeepNamespaceName"
-         $location = "South India"
-         Install-Module -Name Az.ServiceBus -Force -AllowClobber -Scope CurrentUser -Repository PSGallery
-         Import-Module -Name Az.ServiceBus -Force -Global
-
-         New-AzServiceBusNamespace -ResourceGroupName $resourceGroupName -NamespaceName $namespaceName -Location $location
+        shell: cmd
+        run: az servicebus namespace create --name 'Test18' --resource-group 'testgit' --location 'South India'
